@@ -6,4 +6,12 @@ class Desktop extends Computer
         parent::__construct($brand, $price);
         $this->psu = $psu;
     }
+    public function getPsu()
+    {
+        return 'Cooler MasterXXX';
+    }
+    public function getProductType()
+    {
+        return 'Desktop';
+    }
 }

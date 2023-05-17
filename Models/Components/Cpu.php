@@ -1,18 +1,27 @@
 <?php
-class CpuDesktop extends Desktop
+class CpuDesktop extends Computer
 {
-    public function __construct($brand, $price, $psu, public string $name)
+    public function __construct(public string $name)
     {
-        parent::__construct($brand, $price, $psu);
         $this->name = $name;
+    }
+
+    public function getBrand()
+    {
+        return $this->name;
     }
 }
 
-class CpuLaptop extends Laptop
+class CpuLaptop extends Computer
 {
-    public function __construct($brand, $price, $battery, public string $name)
+    public function __construct(public string $name)
     {
-        parent::__construct($brand, $price, $battery);
+
         $this->name = $name;
+    }
+
+    public function getBrand()
+    {
+        return $this->name;
     }
 }

@@ -8,13 +8,17 @@ class Computer
         $this->price = $price;
     }
 
-    public function get_brand()
+    public function getBrand()
     {
         return $this->brand;
     }
 
-    public function get_price()
+    public function getPrice()
     {
         return $this->price;
+    }
+    public function getProductType()
+    {
+        return 'Generic Computer';
     }
 }
