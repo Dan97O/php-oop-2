@@ -31,18 +31,19 @@ require_once __DIR__ . '/Database/db.php';
     <?php foreach ($computers as $computer): ?>
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title"><?php echo $computer->getBrand(); ?></h5>
-                <p class="card-text">Price: <?php echo $computer->getPrice(); ?></p>
-                <p class="card-text"><?php echo $computer->getProductType(); ?></p>
+                <h5 class="card-title"><?=$computer->getBrand();?></h5>
+                <p class="card-text">Price: <?=$computer->getPrice();?></p>
+                <p class="card-text"><?=$computer->getProductType();?></p>
                 <?php if ($computer instanceof Desktop): ?>
-                    <p class="card-text">PSU: <?php echo $computer->getPsu(); ?></p>
+                    <p class="card-text">PSU: <?=$computer->getPsu();?></p>
+                    <p class="card-text">Keyboard Type: <?=$computer->getTypeKeyboard();?></p>
                 <?php elseif ($computer instanceof Laptop): ?>
-                    <p class="card-text"><?php echo $computer->getTypeBattery(); ?></p>
+                    <p class="card-text">Laptop: <?=$computer->getTypeBattery();?></p>
+                    <p class="card-text">Keyboard Type: <?=$computer->getTypeKeyboard();?></p>
                 <?php endif;?>
             </div>
         </div>
     <?php endforeach;?>
-
 </div>
 </body>
 </html>
