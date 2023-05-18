@@ -25,12 +25,25 @@ require_once __DIR__ . '/Database/db.php';
   <title>Document</title>
 </head>
 <body>
+
+<style>
+    img{
+        height: 200px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+    }
+</style>
 <div class="container">
     <h1>Computer Products</h1>
 
     <?php foreach ($computers as $computer): ?>
-        <div class="card mb-3">
-            <div class="card-body">
+        <div class="card mb-3 w-50">
+            <?php if ($computer instanceof Desktop): ?>
+                <img src="<?=$computer->getUrl();?>" class="card-img-top" alt="Desktop Image">
+            <?php elseif ($computer instanceof Laptop): ?>
+                <img src="<?=$computer->getUrl();?>" class="card-img-top" alt="Laptop Image">
+            <?php endif;?>
+            <div class="card-body text-center">
                 <h5 class="card-title"><?=$computer->getBrand();?></h5>
                 <p class="card-text">Price: <?=$computer->getPrice();?></p>
                 <p class="card-text"><?=$computer->getProductType();?></p>
@@ -45,5 +58,6 @@ require_once __DIR__ . '/Database/db.php';
         </div>
     <?php endforeach;?>
 </div>
+
 </body>
 </html>
