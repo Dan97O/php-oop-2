@@ -22,7 +22,7 @@ require_once __DIR__ . '/Database/db.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <title>Document</title>
+  <title>Computer Products</title>
 </head>
 <body>
 
@@ -33,11 +33,11 @@ require_once __DIR__ . '/Database/db.php';
         object-fit: contain;
     }
 </style>
-<div class="container">
+<div class="container d-flex mt-5 gap-3 flex-column align-items-center">
     <h1>Computer Products</h1>
 
     <?php foreach ($computers as $computer): ?>
-        <div class="card mb-3 w-50">
+        <div class="card mb-3 w-50 d-flex">
             <?php if ($computer instanceof Desktop): ?>
                 <img src="<?=$computer->getUrl();?>" class="card-img-top" alt="Desktop Image">
             <?php elseif ($computer instanceof Laptop): ?>
@@ -49,10 +49,10 @@ require_once __DIR__ . '/Database/db.php';
                 <p class="card-text"><?=$computer->getProductType();?></p>
                 <?php if ($computer instanceof Desktop): ?>
                     <p class="card-text">PSU: <?=$computer->getPsu();?></p>
-                    <p class="card-text">Keyboard Type: <?=$computer->getTypeKeyboard();?></p>
+                    <p class="card-text">Keyboard Type: <?=$computer->getType();?></p>
                 <?php elseif ($computer instanceof Laptop): ?>
                     <p class="card-text">Laptop: <?=$computer->getTypeBattery();?></p>
-                    <p class="card-text">Keyboard Type: <?=$computer->getTypeKeyboard();?></p>
+                    <p class="card-text">Keyboard Type: <?=$computer->getType();?></p>
                 <?php endif;?>
             </div>
         </div>

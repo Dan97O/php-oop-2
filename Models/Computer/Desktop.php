@@ -11,7 +11,7 @@ class Desktop extends Computer
     }
     public function getPsu()
     {
-        return 'Cooler MasterXXX';
+        return $this->psu;
     }
     public function getProductType()
     {

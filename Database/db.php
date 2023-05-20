@@ -6,6 +6,6 @@ require_once __DIR__ . '/../Models/Components/Cpu.php';
 
 $computers = [
     new Computer('computer', 1500),
-    new Desktop('Asus', 1800, 'psu name'),
-    new Laptop('Macbook', 2000, 'batteria'),
+    new Desktop('Asus', 1800, 'Cooler MasterXXX'),
+    new Laptop('Macbook', 2000, 'Batteria ai polimeri di litio'),
 ];

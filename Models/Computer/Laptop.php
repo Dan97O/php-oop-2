@@ -13,7 +13,7 @@ class Laptop extends Computer
     }
     public function getTypeBattery()
     {
-        return 'Batteria ai polimeri di litio ';
+        return $this->battery;
     }
     public function getProductType()
     {
